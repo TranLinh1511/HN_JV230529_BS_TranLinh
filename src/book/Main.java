@@ -67,9 +67,10 @@ public class Main {
             books[currentIndex] = new Bookmanage();
             System.out.println("Nhập thông tin sách thứ " + i);
             sc.nextLine();
-            books[currentIndex].inputData(sc);
+            books[currentIndex].inputData(sc, currentIndex);
             currentIndex++;
         }
+        System.out.println(currentIndex);
         System.out.println("Nhập thành công " + n + " sách.");
     }
 

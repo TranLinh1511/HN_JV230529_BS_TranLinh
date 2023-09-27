@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Bookmanage {
     private String bookName, author, des;
-    private static int bookId = 0;
+    private int bookId;
     private double importPrice, exportPrice;
     private float interest;
     boolean bookStatus;
@@ -42,8 +42,8 @@ public class Bookmanage {
         return bookId;
     }
 
-    public static void setBookId(int bookId) {
-        Bookmanage.bookId = bookId;
+    public  void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public double getImportPrice() {
@@ -82,9 +82,8 @@ public class Bookmanage {
         this.bookName = bookName;
     }
 
-    public void inputData(Scanner sc) {
+    public void inputData(Scanner sc, int id) {
         System.out.println("<-------------------------------------->");
-        bookId++;
         boolean isExit = true;
         do {
             System.out.println("Nhập tên sách: ");
@@ -136,6 +135,7 @@ public class Bookmanage {
         } while (isExit);
         this.bookStatus = true;
         this.interest = (float) (this.exportPrice - this.importPrice);
+        this.bookId = id;
     }
 
     public void update(Scanner sc) {
@@ -198,9 +198,9 @@ public class Bookmanage {
         System.out.println("Tên sách: " + this.bookName);
         System.out.println("Tác giả: " + this.author);
         System.out.println("Mô tả: " + this.des);
-        System.out.println("Giá nhập vào: " + this.importPrice + "Vnd");
-        System.out.println("Giá xuất ra: " + this.exportPrice + "Vnd");
-        System.out.println("Lợi nhuận: " + this.interest + "Vnd");
+        System.out.println("Giá nhập vào: " + this.importPrice + " VND");
+        System.out.println("Giá xuất ra: " + this.exportPrice + " VND");
+        System.out.println("Lợi nhuận: " + this.interest + "VND");
         System.out.println("Trạng thái: " + (this.bookStatus ? "Đang được bán" : "Không được bán"));
     }
 }
