@@ -7,6 +7,7 @@ public class Main {
     static Bookmanage[] books = new Bookmanage[100];
     static int currentIndex = 0;
     static Scanner sc = new Scanner(System.in);
+    static  int bookId = 0;
 
     public static void main(String[] args) {
         do {
@@ -67,8 +68,9 @@ public class Main {
             books[currentIndex] = new Bookmanage();
             System.out.println("Nhập thông tin sách thứ " + i);
             sc.nextLine();
-            books[currentIndex].inputData(sc, currentIndex);
+            books[currentIndex].inputData(sc, bookId);
             currentIndex++;
+            bookId++;
         }
         System.out.println(currentIndex);
         System.out.println("Nhập thành công " + n + " sách.");
